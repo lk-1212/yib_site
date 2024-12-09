@@ -19,3 +19,11 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: 'Genty';
+  src: url(/src/app/fonts/GentySans-Regular.woff2) format('woff2'),
+    url(/src/app/fonts/GentySans-Regular.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
