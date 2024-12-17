@@ -1,7 +1,9 @@
+import Videos from '../videos';
+
 const UploadsSection = () => {
   return (
-    <div className="flex items-center justify-center p-10 ">
-      Uploads Section
+    <div className="flex flex-col items-center justify-center p-10 ">
+      <Videos />
     </div>
   );
 };
