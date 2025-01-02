@@ -3,7 +3,7 @@ import ImageSectionText from '../image_section_text/index';
 
 const MainImageSection = () => {
   return (
-    <div className="flex flex-col lg:flex-row lg:items-center">
+    <div className="flex flex-col bg-black lg:flex-row lg:items-center">
       <ImageSectionText />
       <Image
         src={'/images/IMG_2691.jpg'}
