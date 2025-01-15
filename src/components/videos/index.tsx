@@ -15,14 +15,21 @@ const Videos = () => {
 
   }, [])
 
+  console.log(videoData)
+
+  // I've upated the API to return all the videos available on the
+  // now I need to update the code tor return the data correctly
+  // according to the structure of the json
+
   const transfromData = (data:any) => {
+    // for(const item of)
+
     return(
       data.map((item:any) => {
         return {
-          videoId: item.id,
-          title: item.snippet.localized.title,
-          thumbnail: item.snippet.thumbnails.maxres,
-          duration: item.contentDetails.duration
+          videoId: item.id.videoId,
+          title: item.snippet.title,
+          thumbnail: item.snippet.thumbnails.high,
         }
       })
     )
@@ -30,14 +37,12 @@ const Videos = () => {
 
   const renderVideo = () => {
     if(!videoData.length) return []
-    // loreto cut the PT from the time on the duration
     return videoData.map((video:any, idx:number)  => {
     return (
       <div className="p-5" key={idx}>
         <VideoCard
           preview={video.thumbnail.url}
           title={video.title}
-          duration={video.duration}
           videoId={video.videoId}
         />
       </div>
@@ -49,25 +54,7 @@ const Videos = () => {
       {renderVideo()}
     </div>
   );
-  // const numberOfVideos = VIDEOS.length;
-  // const renderVideos = VIDEOS.map((video, index) => {
-  //   return (
-  //     <div className="p-5" key={index}>
-  //       <VideoCard
-  //         preview={video.preview}
-  //         title={video.title}
-  //         duration={video.duration}
-  //       />
-  //     </div>
-  //   );
-  // });
-  // return (
-  //   <div className={clsx('grid', getGridStyles(numberOfVideos))}>
-  //     {renderVideos}
-  //   </div>
-  // );
 };
 
-// flex flex-col md:flex-row
 
 export default Videos;
