@@ -7,9 +7,9 @@ const VideoCard = ({ preview, title, videoId }: VideoCardProps) => {
   if (!videoId) return null;
 
   return (
-    <div className="min-w-[200px] border-solid border-2 border-white rounded-md">
+    <div className="min-w-[200px] rounded-md">
       <a href={youtubeVidLink}>
-        <div className="">
+        <div className="rounded-lg border-2 border-white p-2">
           <Image
             src={preview}
             width={100}
@@ -18,8 +18,8 @@ const VideoCard = ({ preview, title, videoId }: VideoCardProps) => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="flex flex-col lg:flex-row items-center justify-between pt-3 border-t-2 border-t-white hover:underline">
-          <p className="lg:px-3">{title}</p>
+        <div className="flex flex-col items-center justify-center pt-3 hover:underline lg:flex-row">
+          <p className="flex text-center lg:px-3">{title}</p>
         </div>
       </a>
     </div>
