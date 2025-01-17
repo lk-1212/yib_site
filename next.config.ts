@@ -24,7 +24,7 @@ module.exports = {
         search: '',
       },
     ],
-  }
+  },
 };
 
 export default nextConfig;
