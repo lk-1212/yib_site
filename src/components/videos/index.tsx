@@ -3,11 +3,13 @@
 import clsx from 'clsx';
 import VideoCard from '../video_card';
 import { getGridStyles } from './helpers';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import getYoutubeVideos from '@/api/youtube_vids';
+import { YoutubeVideoList } from '@/api/types';
+import { VideoData } from './types';
 
 const Videos = (): React.ReactElement => {
-  const [videoData, setVideoData] = useState([]);
+  const [videoData, setVideoData] = useState<VideoData[]>([]);
 
   useEffect(() => {
     getYoutubeVideos()
@@ -17,8 +19,8 @@ const Videos = (): React.ReactElement => {
       .catch();
   }, []);
 
-  const transfromData = (data: any) => {
-    return data.map((item: any) => {
+  const transfromData = (data: YoutubeVideoList['items']) => {
+    return data.map((item) => {
       return {
         videoId: item.id.videoId,
         title: item.snippet.title,
@@ -27,13 +29,14 @@ const Videos = (): React.ReactElement => {
     });
   };
 
-  const renderVideo = () => {
+  const renderVideo = (): React.ReactElement[] => {
     if (!videoData.length) return [];
+
     const visualContentOnly = videoData.filter(
       (item) => item.videoId !== undefined
     );
 
-    return visualContentOnly.map((video: any, idx: number) => {
+    return visualContentOnly.map((video, idx) => {
       return (
         <div className="p-5" key={idx}>
           <VideoCard

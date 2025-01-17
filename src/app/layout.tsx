@@ -1,17 +1,22 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import './globals.css';
 import HeaderNav from '@/components/header_nav';
+import { Roboto, Lora, Lato } from 'next/font/google';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
 });
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400'],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/images/yib_icon.jpg" sizes="any" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.className} ${lora.className} ${lato.className}`}
       >
         <HeaderNav />
 
