@@ -9,7 +9,7 @@ const VideoCard = ({ preview, title, videoId }: VideoCardProps) => {
   return (
     <div className="min-w-[200px] rounded-md">
       <a href={youtubeVidLink}>
-        <div className="rounded-lg border-2 border-white p-2">
+        <div className="rounded-lg border-2 border-stone-300 p-2">
           <Image
             src={preview}
             width={100}
