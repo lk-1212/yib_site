@@ -20,7 +20,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: 'yearsinbetween podcast',
+  title: 'yearsinbetween',
   description:
     'For the thoughts, feelings, and experiences in the years in between',
 };
