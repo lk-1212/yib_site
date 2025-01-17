@@ -6,7 +6,7 @@ const MainImageSection = () => {
     <div className="flex flex-col bg-black lg:flex-row lg:items-center">
       <ImageSectionText />
       <Image
-        src={'/images/IMG_2691.jpg'}
+        src={'/images/podcasters_img.jpg'}
         width={200}
         height={200}
         alt=""

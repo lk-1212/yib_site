@@ -16,7 +16,7 @@ export default {
         custom: ['"Genty"', 'sans-serif'],
       },
       backgroundImage: {
-        'about-background': "url('/images/IMG_2691.jpg')",
+        'about-background': "url('/images/podcasters_img.jpg')",
       },
     },
   },
