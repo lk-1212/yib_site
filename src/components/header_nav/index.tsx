@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HeaderNav = (): React.ReactElement => {
   return (
-    <a
+    <Link
       className={
         'flex items-center justify-center px-4 py-3 shadow-2xl bg-stone-200'
       }
@@ -14,7 +15,7 @@ const HeaderNav = (): React.ReactElement => {
         height={100}
         alt="years in between icon"
       />
-    </a>
+    </Link>
   );
 };
 
